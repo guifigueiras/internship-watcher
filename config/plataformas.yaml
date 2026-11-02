@@ -1,0 +1,534 @@
+# Gerado pelo detetor em 02/11/2026 19:09. Não editar à mão:
+# para corrigir uma empresa, escreve carreiras/plataforma em config/empresas.yaml.
+empresas:
+  OutSystems:
+    estado: pagina
+    carreiras: https://www.outsystems.com/careers
+  Feedzai:
+    estado: plataforma
+    carreiras: https://careers.feedzai.com/
+    plataforma:
+      tipo: greenhouse
+      id: feedzai
+    ofertas_na_detecao: 13
+  Talkdesk:
+    estado: pagina
+    carreiras: https://careers.talkdesk.com/
+  Unbabel:
+    estado: plataforma
+    carreiras: https://www.transperfect.com/careers/
+    plataforma:
+      tipo: recruitee
+      id: transperfect
+    ofertas_na_detecao: 676
+  Cloudflare:
+    estado: plataforma
+    carreiras: https://www.cloudflare.com/careers/jobs/
+    plataforma:
+      tipo: greenhouse
+      id: cloudflare
+    ofertas_na_detecao: 469
+  Mercedes-Benz.io:
+    estado: plataforma
+    carreiras: https://www.mercedes-benz.io/jobs
+    plataforma:
+      tipo: recruitee
+      id: mbio
+    ofertas_na_detecao: 4
+  Critical TechWorks (BMW):
+    estado: plataforma
+    carreiras: https://join.criticaltechworks.com/
+    plataforma:
+      tipo: teamtailor
+      id: career
+    ofertas_na_detecao: 17
+  Volkswagen Digital Solutions:
+    estado: plataforma
+    carreiras: https://vwg-digitalsolutions.pt/careers/
+    plataforma:
+      tipo: lever
+      id: vwgds
+    ofertas_na_detecao: 9
+  Critical Software:
+    estado: plataforma
+    carreiras: https://criticalsoftware.com/en/join-us
+    plataforma:
+      tipo: breezy
+      id: critical-software
+    ofertas_na_detecao: null
+  SIBS:
+    estado: pagina
+    carreiras: https://www.corporate.sibs.com/careers/
+    manual: true
+  Nokia:
+    estado: plataforma
+    carreiras: https://www.nokia.com/careers/
+    plataforma:
+      tipo: oracle
+      id: fa-evmr-saasfaprod1
+    ofertas_na_detecao: null
+  Siemens:
+    estado: pagina
+    carreiras: https://jobs.siemens.com/pt_PT/externaljobs
+  Microsoft:
+    estado: propria
+    carreiras: https://apply.careers.microsoft.com/careers
+    plataforma:
+      tipo: microsoft
+      id: ''
+    ofertas_na_detecao: null
+    manual: true
+  Google:
+    estado: propria
+    carreiras: https://www.google.com/about/careers/applications/jobs/results/?location=Portugal&q=intern
+    plataforma:
+      tipo: google
+      id: ''
+    ofertas_na_detecao: null
+    manual: true
+  Amazon:
+    estado: propria
+    carreiras: https://www.amazon.jobs/content/en/career-programs/military
+    plataforma:
+      tipo: amazon
+      id: ''
+    ofertas_na_detecao: null
+  IBM:
+    estado: pagina
+    carreiras: https://www.ibm.com/careers
+  Cisco:
+    estado: plataforma
+    carreiras: https://careers.cisco.com/global/en
+    plataforma:
+      tipo: workday
+      id: cisco.wd5/Cisco_Careers
+    ofertas_na_detecao: 1436
+  Bosch:
+    estado: plataforma
+    carreiras: https://www.bosch.pt/carreiras/
+    plataforma:
+      tipo: smartrecruiters
+      id: BoschGroup
+    ofertas_na_detecao: 4992
+  Uber:
+    estado: plataforma
+    carreiras: https://jobs.uber.com/en/
+    plataforma:
+      tipo: oracle
+      id: iaziqy
+    ofertas_na_detecao: null
+  Revolut:
+    estado: pagina
+    carreiras: https://www.revolut.com/careers/
+  Pipedrive:
+    estado: pagina
+    carreiras: https://www.pipedrive.com/en/jobs
+  Farfetch:
+    estado: plataforma
+    carreiras: https://jobs.lever.co/farfetch
+    plataforma:
+      tipo: lever
+      id: farfetch
+    ofertas_na_detecao: 44
+    manual: true
+  Sword Health:
+    estado: plataforma
+    carreiras: https://job-boards.greenhouse.io/swordhealth
+    plataforma:
+      tipo: greenhouse
+      id: swordhealth
+    ofertas_na_detecao: 62
+    manual: true
+  Sky Portugal:
+    estado: plataforma
+    carreiras: https://careers.sky.com/
+    plataforma:
+      tipo: workday
+      id: comcast.wd115/Comcast_Careers
+    ofertas_na_detecao: 677
+  Web Summit:
+    estado: plataforma
+    carreiras: https://websummit.com/careers
+    plataforma:
+      tipo: lever
+      id: websummit
+    ofertas_na_detecao: 23
+  Defined.ai:
+    estado: pagina
+    carreiras: https://definedai.applytojob.com/apply
+  Codacy:
+    estado: plataforma
+    carreiras: https://www.codacy.com/careers
+    plataforma:
+      tipo: personio
+      id: qamine-portugal
+    ofertas_na_detecao: 0
+  Sensei:
+    estado: plataforma
+    carreiras: https://www.sensei.tech/careers
+    plataforma:
+      tipo: successfactors
+      id: app.screenloop.com
+    ofertas_na_detecao: null
+  Indie Campers:
+    estado: plataforma
+    carreiras: https://indiecampers.com/discover/en-us/careers
+    plataforma:
+      tipo: greenhouse
+      id: indiecampers
+    ofertas_na_detecao: 579
+  McKinsey & Company:
+    estado: erro
+    carreiras: null
+    manual: true
+  Boston Consulting Group:
+    estado: plataforma
+    carreiras: https://careers.bcg.com/global/en/
+    plataforma:
+      tipo: phenom
+      id: ''
+    ofertas_na_detecao: null
+  Bain & Company:
+    estado: pagina
+    carreiras: https://www.bain.com/careers/
+  Kearney:
+    estado: plataforma
+    carreiras: https://www.kearney.com/careers
+    plataforma:
+      tipo: taleo
+      id: kearney
+    ofertas_na_detecao: null
+  Roland Berger:
+    estado: pagina
+    carreiras: https://www.rolandberger.com/en/Join/Join-Us/Career-Starter/
+  Deloitte:
+    estado: plataforma
+    carreiras: https://jobs.deloitte.pt/search/?q=&locationsearch=Lisboa
+    plataforma:
+      tipo: successfactors
+      id: jobs.deloitte.pt
+    ofertas_na_detecao: null
+    manual: true
+  PwC:
+    estado: pagina
+    carreiras: https://www.pwc.pt/pt/carreiras.html
+  EY:
+    estado: plataforma
+    carreiras: https://careers.ey.com/ey/search/?q=&locationsearch=Lisboa
+    plataforma:
+      tipo: successfactors
+      id: careers.ey.com/ey
+    ofertas_na_detecao: null
+    manual: true
+  KPMG:
+    estado: pagina
+    carreiras: https://kpmg.com/pt/pt/carreiras.html
+  Accenture:
+    estado: plataforma
+    carreiras: https://www.accenture.com/pt-pt/careers
+    plataforma:
+      tipo: workday
+      id: accenture.wd103/AccentureCareers
+    ofertas_na_detecao: 2000
+  Capgemini:
+    estado: plataforma
+    carreiras: https://careers.capgemini.com/search/?q=&locationsearch=Lisboa
+    plataforma:
+      tipo: successfactors
+      id: careers.capgemini.com
+    ofertas_na_detecao: null
+    manual: true
+  CGI:
+    estado: pagina
+    carreiras: https://www.cgi.com/portugal/pt-pt/portugal/carreiras
+  NTT DATA:
+    estado: plataforma
+    carreiras: https://www.nttdata.com/en-us/careers
+    plataforma:
+      tipo: workday
+      id: nttglobaldatacenters.wd501/External
+    ofertas_na_detecao: 257
+  Minsait (Indra):
+    estado: plataforma
+    carreiras: https://www.minsait.com/es/talento
+    plataforma:
+      tipo: successfactors
+      id: careers.indragroup.com
+    ofertas_na_detecao: null
+  Novabase:
+    estado: plataforma
+    carreiras: https://www.novabase.com/pt/candidaturas/candidaturas-1/
+    plataforma:
+      tipo: successfactors
+      id: careers.celfocus.com
+    ofertas_na_detecao: null
+    manual: true
+  Celfocus:
+    estado: pagina
+    carreiras: https://careers.celfocus.com/
+  Inetum:
+    estado: pagina
+    carreiras: https://www.inetum.com/global/en/careers/why-join-us.html
+  Devoteam:
+    estado: pagina
+    carreiras: https://www.devoteam.com/join-us/
+  Axians:
+    estado: plataforma
+    carreiras: https://axiansgroup.teamtailor.com/
+    plataforma:
+      tipo: teamtailor
+      id: axiansgroup
+    ofertas_na_detecao: 100
+  Timestamp:
+    estado: plataforma
+    carreiras: https://www.timestampgroup.com/carreiras
+    plataforma:
+      tipo: teamtailor
+      id: timestamp
+    ofertas_na_detecao: 21
+  Banco de Portugal:
+    estado: plataforma
+    carreiras: https://career2.successfactors.eu/career?company=bancodepor&career_ns=job_listing_summary&navBarLevel=JOB_SEARCH
+    plataforma:
+      tipo: successfactors
+      id: career2.successfactors.eu/bancodepor
+    ofertas_na_detecao: null
+    manual: true
+  Caixa Geral de Depósitos:
+    estado: plataforma
+    carreiras: https://recrutamento.cgd.pt/
+    plataforma:
+      tipo: successfactors
+      id: recrutamento.cgd.pt
+    ofertas_na_detecao: null
+  Millennium bcp:
+    estado: pagina
+    carreiras: https://www.candidaturasmillennium.pt/
+  Santander Portugal:
+    estado: pagina
+    carreiras: https://www.santander.pt/seguro-de-desemprego
+  BPI:
+    estado: plataforma
+    carreiras: https://www.bancobpi.pt/grupo-bpi/trabalhar-no-bpi
+    plataforma:
+      tipo: successfactors
+      id: careers.bancobpi.pt
+    ofertas_na_detecao: null
+    manual: true
+  BNP Paribas:
+    estado: pagina
+    carreiras: https://www.bnpparibas.pt/pt/employee-value-proposition/
+  Novo Banco:
+    estado: plataforma
+    carreiras: https://www.novobanco.pt/en/personal/careers/summer-intership
+    plataforma:
+      tipo: successfactors
+      id: www.novobanco.pt
+    ofertas_na_detecao: null
+    manual: true
+  CMVM:
+    estado: plataforma
+    carreiras: https://career2.successfactors.eu/career?company=comissodom&career_ns=job_listing_summary&navBarLevel=JOB_SEARCH
+    plataforma:
+      tipo: successfactors
+      id: career2.successfactors.eu/comissodom
+    ofertas_na_detecao: null
+    manual: true
+  Crédito Agrícola:
+    estado: erro
+    carreiras: null
+    manual: true
+  Banco Montepio:
+    estado: pagina
+    carreiras: https://www.bancomontepio.pt/institucional/trabalhar-no-banco-montepio
+    manual: true
+  Euronext Lisbon:
+    estado: plataforma
+    carreiras: https://www.euronext.com/en/about/careers
+    plataforma:
+      tipo: workday
+      id: hrhub.wd3/Euronext_Career_Page
+    ofertas_na_detecao: 140
+  Fidelidade:
+    estado: erro
+    carreiras: null
+    manual: true
+  Ageas Portugal:
+    estado: pagina
+    carreiras: https://beageas.pt/
+    manual: true
+  Marsh:
+    estado: plataforma
+    carreiras: https://careers.marsh.com/global/en
+    plataforma:
+      tipo: phenom
+      id: ''
+    ofertas_na_detecao: null
+  EDP:
+    estado: plataforma
+    carreiras: https://jobs.edp.com/search/?q=&locationsearch=Portugal
+    plataforma:
+      tipo: successfactors
+      id: jobs.edp.com
+    ofertas_na_detecao: null
+    manual: true
+  Galp:
+    estado: plataforma
+    carreiras: https://jobs.galp.com/search/?q=&locationsearch=Lisboa
+    plataforma:
+      tipo: successfactors
+      id: jobs.galp.com
+    ofertas_na_detecao: null
+    manual: true
+  REN:
+    estado: plataforma
+    carreiras: https://www.ren.pt/pessoas/como-e-trabalhar-na-ren
+    plataforma:
+      tipo: successfactors
+      id: oportunidades.ren.pt
+    ofertas_na_detecao: null
+  Brisa:
+    estado: plataforma
+    carreiras: https://recrutamento.brisa.pt/
+    plataforma:
+      tipo: successfactors
+      id: recrutamento.brisa.pt
+    ofertas_na_detecao: null
+  The Navigator Company:
+    estado: pagina
+    carreiras: https://thenavigatorcompany.com/pessoas/trabalhar-na-companhia/
+  ANA Aeroportos:
+    estado: plataforma
+    carreiras: https://carreiras.ana.pt/
+    plataforma:
+      tipo: successfactors
+      id: carreiras.ana.pt
+    ofertas_na_detecao: null
+  NOS:
+    estado: plataforma
+    carreiras: https://www.nos.pt/pt/institucional/pessoas/junta-te-a-nos
+    plataforma:
+      tipo: successfactors
+      id: recrutamento.nos.pt
+    ofertas_na_detecao: null
+  Vodafone Portugal:
+    estado: plataforma
+    carreiras: https://opportunities.vodafone.com/search/?q=&locationsearch=Portugal
+    plataforma:
+      tipo: successfactors
+      id: opportunities.vodafone.com
+    ofertas_na_detecao: null
+    manual: true
+  MEO (Altice Portugal):
+    estado: plataforma
+    carreiras: https://www.recrutamentocomercialmeo.pt/?utm_source=MEO&utm_medium=footer
+    plataforma:
+      tipo: successfactors
+      id: www.recrutamentocomercialmeo.pt
+    ofertas_na_detecao: null
+  CTT:
+    estado: plataforma
+    carreiras: https://carreiras.ctt.pt/
+    plataforma:
+      tipo: successfactors
+      id: carreiras.ctt.pt
+    ofertas_na_detecao: null
+    manual: true
+  Jerónimo Martins:
+    estado: plataforma
+    carreiras: https://careers.jeronimomartins.com/
+    plataforma:
+      tipo: successfactors
+      id: careers.jeronimomartins.com
+    ofertas_na_detecao: null
+  Sonae:
+    estado: pagina
+    carreiras: https://www.sonae.pt/pt/contacto
+    manual: true
+  Lidl Portugal:
+    estado: plataforma
+    carreiras: https://empregos.lidl.pt/
+    plataforma:
+      tipo: successfactors
+      id: career5.successfactors.eu/lidlstiftuP2
+    ofertas_na_detecao: null
+  Auchan Portugal:
+    estado: plataforma
+    carreiras: https://auchanportugal.wd3.myworkdayjobs.com/pt-BR/auchan-retail
+    plataforma:
+      tipo: workday
+      id: auchanportugal.wd3/auchan-retail
+    ofertas_na_detecao: 214
+  Nestlé Portugal:
+    estado: erro
+    carreiras: null
+  Unilever:
+    estado: plataforma
+    carreiras: https://careers.unilever.com/en
+    plataforma:
+      tipo: workday
+      id: unilever.wd3/Unilever_Experienced_Professionals
+    ofertas_na_detecao: 234
+  L'Oréal:
+    estado: pagina
+    carreiras: https://careers.loreal.com/en
+  Procter & Gamble:
+    estado: plataforma
+    carreiras: https://www.pgplantjobs.com/global/en
+    plataforma:
+      tipo: phenom
+      id: ''
+    ofertas_na_detecao: null
+  Sumol+Compal:
+    estado: plataforma
+    carreiras: https://carreiras.sumolcompal.pt/
+    plataforma:
+      tipo: successfactors
+      id: carreiras.sumolcompal.pt
+    ofertas_na_detecao: null
+  TAP Air Portugal:
+    estado: plataforma
+    carreiras: https://recrutamento.tap.pt/go/Internships-&-Trainee/742402/
+    plataforma:
+      tipo: successfactors
+      id: recrutamento.tap.pt
+    ofertas_na_detecao: null
+    manual: true
+  OGMA:
+    estado: plataforma
+    carreiras: https://www.ogma.pt/carreiras-e-oportunidades/
+    plataforma:
+      tipo: successfactors
+      id: recrutamento.ogma.pt
+    ofertas_na_detecao: null
+  Volkswagen Autoeuropa:
+    estado: plataforma
+    carreiras: https://www.volkswagenautoeuropa.pt/carreiras/
+    plataforma:
+      tipo: successfactors
+      id: jobs.volkswagen-group.com
+    ofertas_na_detecao: null
+  Hovione:
+    estado: plataforma
+    carreiras: https://careers.hovione.com/en
+    plataforma:
+      tipo: icims
+      id: en-careers-hovione
+    ofertas_na_detecao: null
+  INESC-ID:
+    estado: pagina
+    carreiras: https://www.inesc-id.pt/open-positions/
+  Instituto de Telecomunicações:
+    estado: pagina
+    carreiras: https://www.it.pt/News/NewsPost/5296
+  Fundação Champalimaud:
+    estado: pagina
+    carreiras: https://www.fchampalimaud.org/open-positions
+    manual: true
+  LIP:
+    estado: plataforma
+    carreiras: https://www.lip.pt/?section=about&page=recruitment
+    plataforma:
+      tipo: smartrecruiters
+      id: CERN
+    ofertas_na_detecao: 34

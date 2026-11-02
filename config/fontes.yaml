@@ -1,0 +1,38 @@
+# Fontes gerais, não ligadas a uma empresa da lista.
+#
+# agregadores: sites que juntam programas de várias empresas.
+#   tipo pagina   a página é vigiada como as páginas de carreiras (textos novos sobre estágios).
+#                 padrao_link: além disso, conta qualquer link cujo endereço tenha este padrão.
+#   tipo sitemap  lê o índice do site e avisa cada página nova cujo endereço bata com "filtro".
+#   tipo itjobs   API do ITJobs.pt; só funciona com o segredo ITJOBS_API_KEY (grátis em itjobs.pt/api).
+
+agregadores:
+  - nome: Talent Portugal
+    tipo: pagina
+    url: "https://talentportugal.com/en/search-for-summer-internships/"
+    padrao_link: "/summer-internship/"
+    seguir_links: false
+
+  - nome: Talent Portugal (novas páginas)
+    tipo: sitemap
+    url: "https://talentportugal.com/sitemap_index.xml"
+    filtro: "summer-internship|estagio-de-verao|trainee-program|programa-de-trainees"
+
+  - nome: Técnico Career Center
+    tipo: pagina
+    url: "https://careercenter.tecnico.ulisboa.pt"
+
+  - nome: ITJobs.pt
+    tipo: itjobs
+
+# Pesquisas no Google News. Só passam notícias cujo título fale de estágios/programas
+# (e não de futebol); ⭐ = menciona uma empresa da lista.
+noticias:
+  - '"estágios de verão"'
+  - '"estágio de verão" candidaturas'
+  - '"summer internship" Portugal'
+  - '"summer internship" Lisboa'
+  - '"programa de estágios" candidaturas abertas'
+  - '"programa de trainees" candidaturas'
+  - '"summer camp" estudantes tecnologia'
+  - '"academia de verão" universitários'

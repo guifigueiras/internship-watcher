@@ -1,0 +1,84 @@
+name: Detetor de páginas de carreiras
+
+# Só corre quando carregas no botão "Run workflow" (não tem agendamento).
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: "Usar browser (Playwright) para sites com JavaScript (mais lento, mais completo)"
+        type: boolean
+        default: true
+      apenas:
+        description: "Opcional: só estas empresas, separadas por vírgulas (ex.: OutSystems, Feedzai)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write             # para guardar config/plataformas.yaml no repositório
+
+concurrency:
+  group: detetor
+  cancel-in-progress: false
+
+jobs:
+  detetar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Obter o código do repositório
+        uses: actions/checkout@v6
+
+      - name: Instalar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Instalar o browser Chromium
+        if: ${{ inputs.browser }}
+        run: python -m playwright install --with-deps chromium
+
+      - name: Correr o detetor
+        env:
+          BROWSER: ${{ inputs.browser }}
+          APENAS: ${{ inputs.apenas }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: |
+          if [ "$BROWSER" = "true" ]; then
+            python -m vigilante.detetor --apenas "$APENAS" --gravar-config
+          else
+            python -m vigilante.detetor --apenas "$APENAS" --gravar-config --sem-browser
+          fi
+
+      - name: Guardar plataformas.yaml no repositório
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/plataformas.yaml
+          if git diff --cached --quiet; then
+            echo "plataformas.yaml sem alterações."
+            exit 0
+          fi
+          git commit -m "Atualizar plataformas detetadas ($(date -u +%F))"
+          for tentativa in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          exit 1
+
+      - name: Guardar os relatórios para download
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: relatorio-detetor
+          path: saida/
+          if-no-files-found: warn

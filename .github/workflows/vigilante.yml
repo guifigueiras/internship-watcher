@@ -1,0 +1,72 @@
+# Na versão pública o agendamento está desligado (não há secrets configurados).
+# Para correr todos os dias na tua cópia, ver "Running it yourself" no README.
+name: Vigilante de estágios
+
+on:
+  workflow_dispatch:          # cria o botão "Run workflow" para correres à mão
+    inputs:
+      modo:
+        description: "simulacao = mostra no log sem enviar nem guardar · normal = a sério · resumo = normal + resumo semanal já · teste = só uma mensagem de teste"
+        type: choice
+        options: [simulacao, normal, resumo, teste]
+        default: simulacao
+
+permissions:
+  contents: write             # para guardar data/estado.json no repositório
+
+concurrency:
+  group: vigilante            # nunca correm duas execuções ao mesmo tempo
+  cancel-in-progress: false
+
+jobs:
+  vigiar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # Nas execuções agendadas não há "inputs", por isso usa-se "normal".
+      MODO: ${{ inputs.modo || 'normal' }}
+    steps:
+      - name: Obter o código do repositório
+        uses: actions/checkout@v6
+
+      - name: Instalar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Instalar o browser Chromium (para a vigia de páginas)
+        if: ${{ env.MODO != 'teste' }}
+        run: python -m playwright install --with-deps chromium
+
+      - name: Correr o vigilante
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          ITJOBS_API_KEY: ${{ secrets.ITJOBS_API_KEY }}   # opcional
+        run: python -m vigilante.main --modo "$MODO"
+
+      - name: Guardar o estado no repositório
+        if: ${{ success() && (env.MODO == 'normal' || env.MODO == 'resumo') }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/estado.json
+          if git diff --cached --quiet; then
+            echo "Estado sem alterações."
+            exit 0
+          fi
+          git commit -m "Atualizar estado do vigilante ($(date -u +%F))"
+          # Se entretanto houve outro commit (ex.: do detetor), junta-o e tenta de novo.
+          for tentativa in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          exit 1

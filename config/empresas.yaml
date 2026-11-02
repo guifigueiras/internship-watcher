@@ -1,0 +1,128 @@
+# Empresas vigiadas pelo vigilante de estágios (rascunho v1, outubro 2026).
+#
+# Campos de cada empresa:
+#   nome        nome da empresa (aparece nas mensagens e serve para pesquisar notícias)
+#   setor       tecnologia | consultoria | banca | seguros | energia | telecom | retalho | consumo | industria | investigacao
+#   site        página principal OU de carreiras. No passo 2, um detetor automático
+#               encontra a página de carreiras e a plataforma de recrutamento a partir daqui.
+#   prioridade  1 = muito relevante / prestígio, 2 = relevante, 3 = vigiar por precaução
+#   notas       opcional: o que já se sabe (nome do programa, quando abriu no ano passado)
+#   carreiras   opcional: página de carreiras escrita à mão (tem prioridade sobre a deteção)
+#   plataforma  opcional: {tipo: greenhouse, id: farfetch}, escrita à mão quando já se sabe;
+#               "plataforma: null" obriga a vigiar a página (ignora o que o detetor encontrou)
+#   vigiar_pagina opcional: false para nunca abrir as páginas desta empresa (só notícias)
+#
+# Podes acrescentar ou apagar empresas à vontade, mantendo o formato.
+# Critério: escritório em Lisboa ou arredores (o estágio é presencial).
+
+empresas:
+
+  # ---------- Tecnologia: produto e engenharia ----------
+  - {nome: OutSystems, setor: tecnologia, site: "https://www.outsystems.com", prioridade: 1}
+  - {nome: Feedzai, setor: tecnologia, site: "https://www.feedzai.com", prioridade: 1}
+  - {nome: Talkdesk, setor: tecnologia, site: "https://www.talkdesk.com", prioridade: 1}
+  - {nome: Unbabel, setor: tecnologia, site: "https://unbabel.com", prioridade: 1}
+  - {nome: Cloudflare, setor: tecnologia, site: "https://www.cloudflare.com/careers/jobs/", prioridade: 1, notas: "Escritório em Lisboa"}
+  - {nome: Mercedes-Benz.io, setor: tecnologia, site: "https://www.mercedes-benz.io", prioridade: 1}
+  - {nome: Critical TechWorks (BMW), setor: tecnologia, site: "https://www.criticaltechworks.com", prioridade: 1}
+  - {nome: Volkswagen Digital Solutions, setor: tecnologia, site: "https://www.vwds.pt", prioridade: 1, notas: "Confirmar site"}
+  - {nome: Critical Software, setor: tecnologia, site: "https://criticalsoftware.com", prioridade: 1, notas: "Summer Camp; em 2026 abriu em abril (prazo 26/04). Escritórios Lisboa/Porto/Coimbra/Viseu"}
+  - {nome: SIBS, setor: tecnologia, site: "https://www.sibs.com", carreiras: "https://www.corporate.sibs.com/careers/", prioridade: 1, notas: "START Program (recém-licenciados)"}
+  - {nome: Nokia, setor: tecnologia, site: "https://www.nokia.com/about-us/careers/", prioridade: 1, notas: "Centro de I&D na Amadora", vigiar_pagina: false}
+  - {nome: Siemens, setor: tecnologia, site: "https://jobs.siemens.com", prioridade: 1}
+  - {nome: Microsoft, setor: tecnologia, site: "https://careers.microsoft.com", carreiras: "https://jobs.careers.microsoft.com/global/en/search?lc=Portugal&q=intern", plataforma: null, prioridade: 1, notas: "Vigiado como página (pesquisa intern em Portugal)"}
+  - {nome: Google, setor: tecnologia, site: "https://www.google.com/about/careers/applications/", carreiras: "https://www.google.com/about/careers/applications/jobs/results/?location=Portugal&q=intern", plataforma: null, prioridade: 2, notas: "Vigiado como página (pesquisa intern em Portugal)"}
+  - {nome: Amazon, setor: tecnologia, site: "https://www.amazon.jobs", prioridade: 2}
+  - {nome: IBM, setor: tecnologia, site: "https://www.ibm.com/careers", prioridade: 2}
+  - {nome: Cisco, setor: tecnologia, site: "https://jobs.cisco.com", prioridade: 2}
+  - {nome: Bosch, setor: tecnologia, site: "https://www.bosch.pt", prioridade: 2}
+  - {nome: Uber, setor: tecnologia, site: "https://www.uber.com/careers/", prioridade: 2}
+  - {nome: Revolut, setor: tecnologia, site: "https://www.revolut.com/careers/", prioridade: 2, vigiar_pagina: false}
+  - {nome: Pipedrive, setor: tecnologia, site: "https://www.pipedrive.com/en/jobs", prioridade: 2}
+  - {nome: Farfetch, setor: tecnologia, site: "https://www.farfetch.com", carreiras: "https://jobs.lever.co/farfetch", plataforma: {tipo: lever, id: farfetch}, prioridade: 2, notas: "O quadro do Greenhouse fechou; vagas no Lever"}
+  - {nome: Sword Health, setor: tecnologia, site: "https://swordhealth.com", carreiras: "https://job-boards.greenhouse.io/swordhealth", plataforma: {tipo: greenhouse, id: swordhealth}, prioridade: 2}
+  - {nome: Sky Portugal, setor: tecnologia, site: "https://careers.sky.com", prioridade: 2, notas: "Summer Internship Program (Lisboa, Aveiro, Funchal); costuma abrir na primavera"}
+  - {nome: Web Summit, setor: tecnologia, site: "https://websummit.com", prioridade: 3}
+  - {nome: Defined.ai, setor: tecnologia, site: "https://www.defined.ai", prioridade: 3}
+  - {nome: Codacy, setor: tecnologia, site: "https://www.codacy.com", prioridade: 3}
+  - {nome: Sensei, setor: tecnologia, site: "https://www.sensei.tech", prioridade: 3}
+  - {nome: Indie Campers, setor: tecnologia, site: "https://indiecampers.com", prioridade: 3}
+
+  # ---------- Consultoria de estratégia ----------
+  - {nome: McKinsey & Company, setor: consultoria, site: "https://www.mckinsey.com/careers", prioridade: 1, vigiar_pagina: false, notas: "O site corta a ligação ao browser do bot; vigiado só por notícias. Tem Summer Business Analyst Intern"}
+  - {nome: Boston Consulting Group, setor: consultoria, site: "https://careers.bcg.com", prioridade: 1}
+  - {nome: Bain & Company, setor: consultoria, site: "https://www.bain.com/careers/", prioridade: 2, notas: "Confirmar se recruta para Lisboa"}
+  - {nome: Kearney, setor: consultoria, site: "https://www.kearney.com", prioridade: 2}
+  - {nome: Roland Berger, setor: consultoria, site: "https://www.rolandberger.com", prioridade: 2}
+
+  # ---------- Big Four e consultoria de negócio/tecnologia ----------
+  - {nome: Deloitte, setor: consultoria, site: "https://www.deloitte.com/pt/pt.html", carreiras: "https://jobs.deloitte.pt/search/?q=&locationsearch=Lisboa", plataforma: {tipo: successfactors, id: jobs.deloitte.pt}, prioridade: 1, notas: "Programa BrightStart para estudantes"}
+  - {nome: PwC, setor: consultoria, site: "https://www.pwc.pt", prioridade: 1}
+  - {nome: EY, setor: consultoria, site: "https://www.ey.com/pt_pt", carreiras: "https://careers.ey.com/ey/search/?q=&locationsearch=Lisboa", plataforma: {tipo: successfactors, id: careers.ey.com/ey}, prioridade: 1, notas: "Estágios curriculares e New Graduates costumam estar no Yello (eyglobal.yello.co); vigiado também por notícias"}
+  - {nome: KPMG, setor: consultoria, site: "https://kpmg.com/pt/pt/home.html", prioridade: 1}
+  - {nome: Accenture, setor: consultoria, site: "https://www.accenture.com/pt-pt", prioridade: 1, notas: "Technology Summer Internship (4 semanas); em 2026 abriu em março"}
+  - {nome: Capgemini, setor: consultoria, site: "https://www.capgemini.com", carreiras: "https://careers.capgemini.com/search/?q=&locationsearch=Lisboa", plataforma: {tipo: successfactors, id: careers.capgemini.com}, prioridade: 2, notas: "Programa JUMP (estágio de verão) em Lisboa"}
+  - {nome: CGI, setor: consultoria, site: "https://www.cgi.com/portugal/pt-pt", prioridade: 2, notas: "Summer Internship Program (Lisboa e Porto); em 2026 abriu em junho"}
+  - {nome: NTT DATA, setor: consultoria, site: "https://www.nttdata.com", prioridade: 2}
+  - {nome: Minsait (Indra), setor: consultoria, site: "https://www.minsait.com", prioridade: 2}
+  - {nome: Novabase, setor: consultoria, site: "https://www.novabase.com", carreiras: "https://www.novabase.com/pt/candidaturas/candidaturas-1/", prioridade: 2}
+  - {nome: Celfocus, setor: consultoria, site: "https://www.celfocus.com", prioridade: 2}
+  - {nome: Inetum, setor: consultoria, site: "https://www.inetum.com", prioridade: 3}
+  - {nome: Devoteam, setor: consultoria, site: "https://www.devoteam.com", prioridade: 3}
+  - {nome: Axians, setor: consultoria, site: "https://www.axians.pt", prioridade: 3}
+  - {nome: Timestamp, setor: consultoria, site: "https://www.timestampgroup.com", prioridade: 3}
+
+  # ---------- Banca, mercados e reguladores ----------
+  - {nome: Banco de Portugal, setor: banca, site: "https://www.bportugal.pt", carreiras: "https://career2.successfactors.eu/career?company=bancodepor&career_ns=job_listing_summary&navBarLevel=JOB_SEARCH", plataforma: {tipo: successfactors, id: career2.successfactors.eu/bancodepor}, prioridade: 1, notas: "Estágios profissionais exigem mestrado (2026: prazo 24/02)"}
+  - {nome: Caixa Geral de Depósitos, setor: banca, site: "https://www.cgd.pt", prioridade: 1}
+  - {nome: Millennium bcp, setor: banca, site: "https://www.millenniumbcp.pt", prioridade: 1, vigiar_pagina: false, notas: "O site proíbe robôs (robots.txt); vigiado só por notícias"}
+  - {nome: Santander Portugal, setor: banca, site: "https://www.santander.pt", prioridade: 1}
+  - {nome: BPI, setor: banca, site: "https://www.bancobpi.pt", carreiras: "https://www.bancobpi.pt/grupo-bpi/trabalhar-no-bpi", prioridade: 1, notas: "Summer Boost (6 semanas); em 2026 abriu em maio"}
+  - {nome: BNP Paribas, setor: banca, site: "https://www.bnpparibas.pt", prioridade: 1, notas: "Grande centro tecnológico e operacional em Lisboa"}
+  - {nome: Novo Banco, setor: banca, site: "https://www.novobanco.pt", carreiras: "https://www.novobanco.pt/en/personal/careers/summer-intership", plataforma: null, prioridade: 2, notas: "University Summer Internships"}
+  - {nome: CMVM, setor: banca, site: "https://www.cmvm.pt", carreiras: "https://career2.successfactors.eu/career?company=comissodom&career_ns=job_listing_summary&navBarLevel=JOB_SEARCH", plataforma: {tipo: successfactors, id: career2.successfactors.eu/comissodom}, prioridade: 2}
+  - {nome: Crédito Agrícola, setor: banca, site: "https://www.creditoagricola.pt", prioridade: 3, vigiar_pagina: false, notas: "Programa CA Educa (5.ª edição em 2026); página antiga deu 404; vigiado por notícias e Talent Portugal"}
+  - {nome: Banco Montepio, setor: banca, site: "https://www.bancomontepio.pt", carreiras: "https://www.bancomontepio.pt/institucional/trabalhar-no-banco-montepio", prioridade: 3, notas: "Já teve programa de estágios de verão"}
+  - {nome: Euronext Lisbon, setor: banca, site: "https://www.euronext.com", prioridade: 3}
+
+  # ---------- Seguros ----------
+  - {nome: Fidelidade, setor: seguros, site: "https://www.fidelidade.pt", prioridade: 2, vigiar_pagina: false, notas: "Sem página de carreiras pública encontrada (link antigo deu 404); vigiado só por notícias"}
+  - {nome: Ageas Portugal, setor: seguros, site: "https://www.ageas.pt", carreiras: "https://beageas.pt/", prioridade: 3, notas: "Programa de trainees BeAgeas; em 2026 abriu em abril (prazo 4/05)"}
+  - {nome: Marsh, setor: seguros, site: "https://www.marsh.com", prioridade: 3, notas: "Summer Trainees (Lisboa); em 2026 abriu em abril"}
+
+  # ---------- Energia e infraestruturas ----------
+  - {nome: EDP, setor: energia, site: "https://www.edp.com", carreiras: "https://jobs.edp.com/search/?q=&locationsearch=Portugal", plataforma: {tipo: successfactors, id: jobs.edp.com}, prioridade: 1, notas: "EDP Summer Internship (inclui a antiga EDP Renováveis)"}
+  - {nome: Galp, setor: energia, site: "https://www.galp.com", carreiras: "https://jobs.galp.com/search/?q=&locationsearch=Lisboa", plataforma: {tipo: successfactors, id: jobs.galp.com}, prioridade: 1, notas: "Summer Break Galp (estágios de verão, abre em março) e Generation Galp (trainees)"}
+  - {nome: REN, setor: energia, site: "https://www.ren.pt", prioridade: 2}
+  - {nome: Brisa, setor: energia, site: "https://www.brisa.pt", prioridade: 2}
+  - {nome: The Navigator Company, setor: industria, site: "https://www.thenavigatorcompany.com", prioridade: 2}
+  - {nome: ANA Aeroportos, setor: energia, site: "https://www.ana.pt", prioridade: 3}
+
+  # ---------- Telecomunicações e correios ----------
+  - {nome: NOS, setor: telecom, site: "https://www.nos.pt", prioridade: 1}
+  - {nome: Vodafone Portugal, setor: telecom, site: "https://www.vodafone.pt", carreiras: "https://opportunities.vodafone.com/search/?q=&locationsearch=Portugal", plataforma: {tipo: successfactors, id: opportunities.vodafone.com}, prioridade: 1, notas: "Youth Internship (Digital/Technology) e Youth Summer Internship em Lisboa"}
+  - {nome: MEO (Altice Portugal), setor: telecom, site: "https://www.meo.pt", prioridade: 1, notas: "Confirmar página de carreiras"}
+  - {nome: CTT, setor: telecom, site: "https://www.ctt.pt", carreiras: "https://carreiras.ctt.pt/", prioridade: 2, notas: "Estágios de verão; programas jovens em ctt.pt/grupo-ctt/carreiras/mais-experiencia"}
+
+  # ---------- Retalho e bens de consumo ----------
+  - {nome: Jerónimo Martins, setor: retalho, site: "https://careers.jeronimomartins.com", prioridade: 1, notas: "Summer Internship Programme (Lisboa, julho-agosto)"}
+  - {nome: Sonae, setor: retalho, site: "https://www.sonae.pt", carreiras: "https://www.sonae.pt/pt/contacto", prioridade: 1, notas: "Programa Contacto; em 2026 abriu em março (prazo 6/04). Sede na Maia"}
+  - {nome: Lidl Portugal, setor: retalho, site: "https://www.lidl.pt", prioridade: 2, notas: "Sede em Sintra"}
+  - {nome: Auchan Portugal, setor: retalho, site: "https://www.auchan.pt", prioridade: 3}
+  - {nome: Nestlé Portugal, setor: consumo, site: "https://empresa.nestle.pt", prioridade: 2, vigiar_pagina: false, notas: "Site bloqueia robôs (403); vigiado só por notícias"}
+  - {nome: Unilever, setor: consumo, site: "https://careers.unilever.com", prioridade: 2}
+  - {nome: L'Oréal, setor: consumo, site: "https://careers.loreal.com", prioridade: 2}
+  - {nome: Procter & Gamble, setor: consumo, site: "https://www.pgcareers.com", prioridade: 2}
+  - {nome: Sumol+Compal, setor: consumo, site: "https://www.sumolcompal.pt", prioridade: 3}
+
+  # ---------- Indústria, saúde e transportes ----------
+  - {nome: TAP Air Portugal, setor: industria, site: "https://www.flytap.com", carreiras: "https://recrutamento.tap.pt/go/Internships-&-Trainee/742402/", plataforma: {tipo: successfactors, id: recrutamento.tap.pt}, prioridade: 2, notas: "Categoria Internships & Trainee"}
+  - {nome: OGMA, setor: industria, site: "https://www.ogma.pt", prioridade: 3}
+  - {nome: Volkswagen Autoeuropa, setor: industria, site: "https://www.volkswagenautoeuropa.pt", prioridade: 3, notas: "Palmela"}
+  - {nome: Hovione, setor: industria, site: "https://www.hovione.com", prioridade: 3}
+
+  # ---------- Investigação (bolsas e estágios de verão para estudantes) ----------
+  - {nome: INESC-ID, setor: investigacao, site: "https://www.inesc-id.pt", prioridade: 1, notas: "Bolsas de iniciação à investigação"}
+  - {nome: Instituto de Telecomunicações, setor: investigacao, site: "https://www.it.pt", prioridade: 2}
+  - {nome: Fundação Champalimaud, setor: investigacao, site: "https://www.fchampalimaud.org", carreiras: "https://www.fchampalimaud.org/open-positions", prioridade: 2}
+  - {nome: LIP, setor: investigacao, site: "https://www.lip.pt", prioridade: 3}

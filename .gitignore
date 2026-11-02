@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.pytest_cache/
+saida/
+# A memória do bot (o que cada pessoa já viu) nunca vai para a versão pública.
+data/
